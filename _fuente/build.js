@@ -408,14 +408,19 @@ function advertencias() {
 }
 
 // Copia para abrir con doble clic (file://): enlaces relativos y con extensión .html.
-// Las páginas van a vista-local/; estilos, imágenes y .md se toman de la raíz.
-// Está en .gitignore: no se publica, así no altera lo que leen los crawlers.
+// El CSS y la imagen van incrustados para que cada página no dependa de archivos externos;
+// los .md se toman de la raíz. Está en .gitignore: no se publica, así no altera lo que leen los crawlers.
 function vistaLocal() {
   const LOCAL = 'vista-local';
+  const css = fs.readFileSync(path.join(RAIZ, 'assets/estilo.css'), 'utf8');
+  const png = path.join(RAIZ, IMG_PRECIOS);
+  const imgDatos = fs.existsSync(png) ? 'data:image/png;base64,' + fs.readFileSync(png).toString('base64') : null;
   for (const [rel, contenido] of [...salida]) {
     if (!rel.endsWith('.html')) continue;
     const origen = path.posix.dirname(path.posix.join(LOCAL, rel));
-    const local = contenido.replace(/(href|src)="(\/[^"]*)"/g, (_, attr, ruta) => {
+    let local = contenido.replace('<link rel="stylesheet" href="/assets/estilo.css">', `<style>\n${css}</style>`);
+    if (imgDatos) local = local.split(`src="${IMG_PRECIOS}"`).join(`src="${imgDatos}"`);
+    local = local.replace(/(href|src)="(\/[^"]*)"/g, (_, attr, ruta) => {
       const destino = ruta === '/' ? `${LOCAL}/index.html`
         : path.posix.extname(ruta) ? ruta.slice(1)
         : `${LOCAL}${ruta}.html`;
@@ -423,6 +428,18 @@ function vistaLocal() {
     });
     emitir(path.posix.join(LOCAL, rel), local);
   }
+  emitir('ABRIR-SITIO-LOCAL.html', `<!doctype html>
+<html lang="${sitio.idioma}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=${LOCAL}/index.html">
+  <title>${esc(sitio.nombre)} (vista local)</title>
+</head>
+<body>
+  <p><a href="${LOCAL}/index.html">Abrir el sitio en modo local</a></p>
+</body>
+</html>
+`);
 }
 
 verificarNeutralidad();

@@ -20,7 +20,7 @@ Bloques admitidos en el contenido: `p`, `h2`, `lista`, `pasos`, `tabla`, `datos`
 
 ## Ver el sitio en local
 
-Abrir con doble clic `vista-local/index.html`. Es una copia con enlaces relativos que el build regenera en cada corrida. Está en `.gitignore`, así que no se publica: el sitio real usa URLs absolutas y sin extensión, que no funcionan desde `file://`.
+Abrir con doble clic `ABRIR-SITIO-LOCAL.html`, que redirige a `vista-local/index.html`. Es una copia con enlaces relativos y con el CSS y la imagen incrustados, que el build regenera en cada corrida. Las dos cosas están en `.gitignore`, así que no se publican. No abras el `index.html` de la raíz: es el del servidor, y sus rutas absolutas (`/assets/estilo.css`) no funcionan desde `file://`.
 
 ## Comandos
 
