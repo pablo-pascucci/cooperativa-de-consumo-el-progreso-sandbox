@@ -1,0 +1,33 @@
+{
+  "ruta": "/consejo-de-administracion",
+  "titulo": "Consejo de Administración",
+  "nav": "Consejo",
+  "descripcion": "Nómina del Consejo de Administración de la Cooperativa de Consumo El Progreso.",
+  "llms_seccion": "Gobierno",
+  "verificar_neutralidad": true,
+  "bloques": [
+    { "p": "El Consejo de Administración dirige las operaciones de la cooperativa conforme al estatuto social y a la Ley 20.337. Sus integrantes son asociados elegidos por la Asamblea General." },
+    { "h2": "Consejeros titulares" },
+    { "tabla": {
+      "encabezados": ["Cargo", "Nombre"],
+      "filas": [
+        ["Presidente", "Hugo Alberto Ferrandi"],
+        ["Vicepresidenta", "Silvia Noemí Arregui"],
+        ["Secretario", "Damián Ezequiel Toloza"],
+        ["Tesorera", "Graciela Beatriz Corvalán"],
+        ["Vocal Titular", "Norma Inés Calcagno"],
+        ["Vocal Titular", "Julio César Bertolotti"],
+        ["Vocal Titular", "Lucía Florencia Andrada"]
+      ]
+    } },
+    { "h2": "Vocales suplentes" },
+    { "tabla": {
+      "encabezados": ["Cargo", "Nombre"],
+      "filas": [
+        ["Vocal Suplente", "Ramiro Esteban Villalba"],
+        ["Vocal Suplente", "Patricia Mabel Iturraspe"],
+        ["Vocal Suplente", "Omar Alcides Benegas"]
+      ]
+    } }
+  ]
+}

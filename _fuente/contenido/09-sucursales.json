@@ -1,0 +1,11 @@
+{
+  "ruta": "/sucursales",
+  "titulo": "Sucursales",
+  "nav": "Sucursales",
+  "descripcion": "Dirección, teléfono y horario de las sucursales de la Cooperativa de Consumo El Progreso.",
+  "llms_seccion": "Asociados y sucursales",
+  "bloques": [
+    { "p": "Todas las sucursales atienden a público en general y a asociados." },
+    { "especial": "tabla-sucursales" }
+  ]
+}

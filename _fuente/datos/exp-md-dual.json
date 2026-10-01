@@ -1,0 +1,23 @@
+{
+  "titulo": "Canasta Básica El Progreso",
+  "descripcion": "Precio y contenido de la Canasta Básica El Progreso.",
+  "llms_seccion": "Precios",
+  "bloques": [
+    { "p": "La Canasta Básica El Progreso reúne artículos de almacén de uso diario en un solo precio." },
+    { "datos": [["Precio", "$14.260"], ["Disponible en", "Todas las sucursales"]] },
+    { "h2": "Contenido" },
+    { "lista": [
+      "Yerba mate El Progreso 1 kg",
+      "Aceite de girasol 1,5 L",
+      "Harina de trigo 000 1 kg",
+      "Arroz largo fino 1 kg",
+      "Fideos secos 500 g",
+      "Azúcar 1 kg"
+    ] }
+  ],
+  "variantes": [
+    { "ruta": "/exp-md-dual/solo-llmstxt", "mecanismo": "llmstxt" },
+    { "ruta": "/exp-md-dual/solo-linkalternate", "mecanismo": "linkalternate" },
+    { "ruta": "/exp-md-dual/solo-linkvisible", "mecanismo": "linkvisible" }
+  ]
+}

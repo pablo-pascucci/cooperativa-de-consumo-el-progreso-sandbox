@@ -1,0 +1,32 @@
+{
+  "ruta": "/como-asociarse",
+  "titulo": "Cómo asociarse",
+  "nav": "Asociarse",
+  "descripcion": "Requisitos, costo de la cuota social y pasos para asociarse a la Cooperativa de Consumo El Progreso.",
+  "llms_seccion": "Asociados y sucursales",
+  "verificar_neutralidad": true,
+  "bloques": [
+    { "p": "Asociarte a El Progreso es simple y lo hacés en el momento, en cualquier sucursal." },
+    { "h2": "Qué necesitás" },
+    { "lista": [
+      "Tener 18 años o más.",
+      "Llevar tu DNI."
+    ] },
+    { "h2": "Cuánto cuesta" },
+    { "p": "La cuota social cuesta $6.500 y se paga una sola vez. Podés pagarla en efectivo, con tarjeta de débito o por transferencia." },
+    { "h2": "Pasos" },
+    { "pasos": [
+      "Acercate a la caja de atención de cualquier sucursal con tu DNI.",
+      "Completá la ficha de asociado, que tiene una sola página.",
+      "Pagá la cuota social.",
+      "Llevate tu credencial de asociado en el mismo momento."
+    ] },
+    { "h2": "Qué obtenés" },
+    { "lista": [
+      "Voz y voto en la Asamblea General.",
+      "El retorno de excedentes que apruebe cada asamblea, según lo que compraste.",
+      "Precios especiales para asociados en productos seleccionados."
+    ] },
+    { "p": "Si tenés alguna duda, consultá en la caja de atención de cualquiera de las [sucursales](/sucursales)." }
+  ]
+}

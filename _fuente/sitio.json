@@ -1,0 +1,17 @@
+{
+  "nombre": "Cooperativa de Consumo El Progreso",
+  "nombre_legal": "Cooperativa de Consumo El Progreso Limitada",
+  "url_base": "https://REEMPLAZAR-DOMINIO.example",
+  "idioma": "es-AR",
+  "resumen": "Cooperativa de consumo que vende artículos de almacén y de primera necesidad en sucursales propias de Villa San Ernesto y localidades vecinas.",
+  "presentacion": [
+    "La Cooperativa de Consumo El Progreso es una cooperativa formada por sus asociados. Desde 1958 vende artículos de almacén y de primera necesidad en sucursales propias de Villa San Ernesto y localidades vecinas.",
+    "En este sitio encontrás información institucional, la nómina de autoridades, la normativa que la rige, los resultados de la última asamblea, cómo asociarte y el listado de sucursales."
+  ],
+  "aviso_ficticio": "Sitio de prueba con contenido ficticio, creado con fines de investigación. La cooperativa, sus autoridades, sucursales, teléfonos y precios no existen.",
+  "experimento_memoria": {
+    "sucursal_id": "colonia-santa-irene",
+    "ruta": "/exp-memoria-direccion",
+    "retirada": false
+  }
+}

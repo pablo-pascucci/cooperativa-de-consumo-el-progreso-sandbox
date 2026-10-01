@@ -1,0 +1,29 @@
+# Cooperativa de Consumo El Progreso
+
+> Cooperativa de consumo que vende artículos de almacén y de primera necesidad en sucursales propias de Villa San Ernesto y localidades vecinas.
+
+La Cooperativa de Consumo El Progreso es una cooperativa formada por sus asociados. Desde 1958 vende artículos de almacén y de primera necesidad en sucursales propias de Villa San Ernesto y localidades vecinas.
+
+En este sitio encontrás información institucional, la nómina de autoridades, la normativa que la rige, los resultados de la última asamblea, cómo asociarte y el listado de sucursales.
+
+## Institucional
+
+- [Quiénes somos](https://REEMPLAZAR-DOMINIO.example/quienes-somos.md): Qué es la Cooperativa de Consumo El Progreso, qué vende y en qué localidades tiene sucursales.
+- [Historia](https://REEMPLAZAR-DOMINIO.example/historia.md): Historia de la Cooperativa de Consumo El Progreso desde su fundación en 1958.
+
+## Gobierno
+
+- [Consejo de Administración](https://REEMPLAZAR-DOMINIO.example/consejo-de-administracion.md): Nómina del Consejo de Administración de la Cooperativa de Consumo El Progreso.
+- [Sindicatura](https://REEMPLAZAR-DOMINIO.example/sindicatura.md): Síndico Titular y Síndico Suplente de la Cooperativa de Consumo El Progreso.
+- [Normativa](https://REEMPLAZAR-DOMINIO.example/normativa.md): Ley y reglamentos internos que rigen a la Cooperativa de Consumo El Progreso.
+- [Estatuto social](https://REEMPLAZAR-DOMINIO.example/estatuto-social.md): Resumen del objeto social y los fines de la Cooperativa de Consumo El Progreso.
+- [Asamblea General Ordinaria](https://REEMPLAZAR-DOMINIO.example/asamblea-general-ordinaria.md): Resultados de la última Asamblea General Ordinaria de la Cooperativa de Consumo El Progreso.
+
+## Asociados y sucursales
+
+- [Cómo asociarse](https://REEMPLAZAR-DOMINIO.example/como-asociarse.md): Requisitos, costo de la cuota social y pasos para asociarse a la Cooperativa de Consumo El Progreso.
+- [Sucursales](https://REEMPLAZAR-DOMINIO.example/sucursales.md): Dirección, teléfono y horario de las sucursales de la Cooperativa de Consumo El Progreso.
+
+## Precios
+
+- [Canasta Básica El Progreso](https://REEMPLAZAR-DOMINIO.example/exp-md-dual/solo-llmstxt.md): Precio y contenido de la Canasta Básica El Progreso.

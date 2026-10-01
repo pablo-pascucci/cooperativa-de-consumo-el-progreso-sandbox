@@ -1,0 +1,34 @@
+[
+  {
+    "id": "casa-central",
+    "nombre": "Casa Central",
+    "direccion": "Av. de los Fundadores 1250",
+    "localidad": "Villa San Ernesto",
+    "telefono": "(03999) 42-1250",
+    "horario": "Lunes a sábados de 8 a 21 h; domingos de 9 a 13 h"
+  },
+  {
+    "id": "barrio-norte",
+    "nombre": "Sucursal Barrio Norte",
+    "direccion": "Calle Los Ceibos 482",
+    "localidad": "Villa San Ernesto",
+    "telefono": "(03999) 42-0482",
+    "horario": "Lunes a sábados de 8 a 20 h"
+  },
+  {
+    "id": "puerto-almendro",
+    "nombre": "Sucursal Puerto Almendro",
+    "direccion": "Av. Costanera Sur 75",
+    "localidad": "Puerto Almendro",
+    "telefono": "(03999) 47-0075",
+    "horario": "Lunes a sábados de 8:30 a 20:30 h"
+  },
+  {
+    "id": "colonia-santa-irene",
+    "nombre": "Sucursal Colonia Santa Irene",
+    "direccion": "Calle Teodomiro Barrancos 1847",
+    "localidad": "Colonia Santa Irene",
+    "telefono": "(03999) 49-1847",
+    "horario": "Lunes a viernes de 8 a 19 h; sábados de 8 a 13 h"
+  }
+]

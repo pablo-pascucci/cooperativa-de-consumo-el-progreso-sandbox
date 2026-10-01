@@ -1,0 +1,12 @@
+{
+  "titulo": "Lista de precios de productos básicos",
+  "introduccion": "Precios de referencia vigentes en todas las sucursales de la cooperativa.",
+  "moneda": "ARS",
+  "productos": [
+    { "nombre": "Yerba mate El Progreso 1 kg", "precio": 4873 },
+    { "nombre": "Aceite de girasol 1,5 L", "precio": 3291 },
+    { "nombre": "Harina de trigo 000 1 kg", "precio": 1147 },
+    { "nombre": "Arroz largo fino 1 kg", "precio": 1689 },
+    { "nombre": "Leche entera 1 L", "precio": 1394 }
+  ]
+}

@@ -1,0 +1,37 @@
+# Generado por _fuente/build.js — no editar a mano.
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+AddDefaultCharset utf-8
+AddType text/markdown .md
+AddCharset utf-8 .md .txt .html .xml
+<IfModule mod_headers.c>
+  <FilesMatch "\.md$">
+    Header set Content-Type "text/markdown; charset=utf-8"
+  </FilesMatch>
+  <FilesMatch "\.txt$">
+    Header set Content-Type "text/plain; charset=utf-8"
+  </FilesMatch>
+</IfModule>
+
+# Fuente del generador y archivos del repositorio: no se sirven.
+RedirectMatch 404 ^/(_fuente|\.git)(/|$)
+RedirectMatch 404 ^/(README\.md|\.gitignore)$
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # /index.html -> /
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^ / [R=301,L]
+
+  # /pagina.html -> /pagina
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # /pagina -> pagina.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
