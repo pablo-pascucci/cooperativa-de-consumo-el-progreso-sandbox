@@ -23,12 +23,17 @@ header.sitio nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8p
 header.sitio nav a { color: #e4efe7; text-decoration: none; }
 header.sitio nav a[aria-current="page"] { color: #fff; text-decoration: underline; }
 
-main { padding-top: 24px; padding-bottom: 40px; }
+main.contenedor { padding-top: 24px; padding-bottom: 40px; }
 h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 16px; }
 h2 { font-size: 1.3rem; margin: 28px 0 8px; }
 img { max-width: 100%; height: auto; border: 1px solid var(--borde); }
 
-table { width: 100%; border-collapse: collapse; background: var(--superficie); margin: 12px 0; display: block; overflow-x: auto; }
+.tabla { overflow-x: auto; margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; background: var(--superficie); }
+@media (max-width: 640px) {
+  th, td { padding: 6px 8px; }
+  .tabla.ancha table { min-width: 560px; }
+}
 th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--borde); vertical-align: top; }
 thead th { background: #efe9da; }
 

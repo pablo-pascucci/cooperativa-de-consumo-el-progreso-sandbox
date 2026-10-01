@@ -7,7 +7,58 @@
   <meta name="description" content="Síndico Titular y Síndico Suplente de la Cooperativa de Consumo El Progreso.">
   <link rel="canonical" href="https://REEMPLAZAR-DOMINIO.example/sindicatura">
   <link rel="alternate" type="text/markdown" href="/sindicatura.md" title="Versión Markdown">
-  <link rel="stylesheet" href="/assets/estilo.css">
+  <style>
+:root {
+  --fondo: #fbf8f0;
+  --superficie: #ffffff;
+  --tinta: #222222;
+  --tenue: #5d5a52;
+  --verde: #1f5c3a;
+  --borde: #d6cdba;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.contenedor { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--verde); }
+
+header.sitio { background: var(--verde); color: #fff; padding: 14px 0; }
+header.sitio .marca { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+header.sitio nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; font-size: .95rem; }
+header.sitio nav a { color: #e4efe7; text-decoration: none; }
+header.sitio nav a[aria-current="page"] { color: #fff; text-decoration: underline; }
+
+main.contenedor { padding-top: 24px; padding-bottom: 40px; }
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 16px; }
+h2 { font-size: 1.3rem; margin: 28px 0 8px; }
+img { max-width: 100%; height: auto; border: 1px solid var(--borde); }
+
+.tabla { overflow-x: auto; margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; background: var(--superficie); }
+@media (max-width: 640px) {
+  th, td { padding: 6px 8px; }
+  .tabla.ancha table { min-width: 560px; }
+}
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+thead th { background: #efe9da; }
+
+dl.datos { margin: 12px 0; background: var(--superficie); border: 1px solid var(--borde); }
+dl.datos div { display: flex; flex-wrap: wrap; gap: 0 16px; padding: 8px 12px; border-bottom: 1px solid var(--borde); }
+dl.datos div:last-child { border-bottom: 0; }
+dl.datos dt { font-weight: 600; min-width: 180px; }
+dl.datos dd { margin: 0; }
+
+ul.secciones li { margin-bottom: 6px; }
+
+footer.sitio { border-top: 1px solid var(--borde); color: var(--tenue); font-size: .9rem; padding: 16px 0 32px; }
+footer.sitio p { margin: 4px 0; }
+footer.sitio .aviso { font-style: italic; }
+</style>
 </head>
 <body>
   <header class="sitio">
@@ -30,13 +81,13 @@
   <main class="contenedor">
 <h1>Sindicatura</h1>
 <p>La Sindicatura es el órgano de fiscalización de la cooperativa previsto en la Ley 20.337. La integran un Síndico Titular y un Síndico Suplente, elegidos por la Asamblea General.</p>
-<table>
+<div class="tabla"><table>
   <thead><tr><th scope="col">Cargo</th><th scope="col">Nombre</th></tr></thead>
   <tbody>
     <tr><td>Síndica Titular</td><td>Cristina Alejandra Lombardo</td></tr>
     <tr><td>Síndico Suplente</td><td>Ernesto Raúl Gaitán</td></tr>
   </tbody>
-</table>
+</table></div>
   </main>
   <footer class="sitio">
     <div class="contenedor">

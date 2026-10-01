@@ -26,6 +26,8 @@ const paginas = fs.readdirSync(path.join(FUENTE, 'contenido'))
   .map((f) => leer(path.join('contenido', f)));
 
 const IMG_PRECIOS = '/assets/exp-formato-precio/lista-precios.png';
+// El CSS va incrustado en cada página: no depende de rutas, así se ve igual servido o abierto con doble clic.
+const CSS = fs.readFileSync(path.join(FUENTE, 'estilo.css'), 'utf8').trim();
 
 // ---------------------------------------------------------------- utilidades
 
@@ -82,12 +84,12 @@ function bloquesHtml(bloques) {
     if (b.tabla) {
       const { encabezados, filas } = b.tabla;
       return [
-        '<table>',
+        `<div class="tabla${encabezados.length > 3 ? ' ancha' : ''}"><table>`,
         `  <thead><tr>${encabezados.map((h) => `<th scope="col">${inlineHtml(h)}</th>`).join('')}</tr></thead>`,
         '  <tbody>',
         ...filas.map((f) => `    <tr>${f.map((c) => `<td>${inlineHtml(c)}</td>`).join('')}</tr>`),
         '  </tbody>',
-        '</table>',
+        '</table></div>',
       ].join('\n');
     }
     throw new Error('Bloque desconocido: ' + JSON.stringify(b));
@@ -161,7 +163,7 @@ function documentoHtml({ ruta, titulo, descripcion, cuerpo, mdRuta = null, alter
     `<meta name="description" content="${esc(descripcion)}">`,
     `<link rel="canonical" href="${url(ruta)}">`,
     alternate && mdRuta ? `<link rel="alternate" type="text/markdown" href="${mdRuta}" title="Versión Markdown">` : null,
-    '<link rel="stylesheet" href="/assets/estilo.css">',
+    `<style>\n${CSS}\n</style>`,
     jsonld ? `<script type="application/ld+json">\n${JSON.stringify(jsonld, null, 2)}\n</script>` : null,
   ].filter(Boolean).map((l) => '  ' + l).join('\n');
 
@@ -233,12 +235,12 @@ function construir() {
   const lineas = precios.productos.map((x) => `${x.nombre}: ${pesos(x.precio)}`);
   const altTexto = `${precios.titulo}. ${lineas.join('. ')}.`;
   const tabla = [
-    '<table>',
+    '<div class="tabla"><table>',
     '  <thead><tr><th scope="col">Producto</th><th scope="col">Precio</th></tr></thead>',
     '  <tbody>',
     ...precios.productos.map((x) => `    <tr><td>${esc(x.nombre)}</td><td>${esc(pesos(x.precio))}</td></tr>`),
     '  </tbody>',
-    '</table>',
+    '</table></div>',
   ].join('\n');
   const jsonldProductos = {
     '@context': 'https://schema.org',
@@ -408,17 +410,16 @@ function advertencias() {
 }
 
 // Copia para abrir con doble clic (file://): enlaces relativos y con extensión .html.
-// El CSS y la imagen van incrustados para que cada página no dependa de archivos externos;
+// La imagen va incrustada para que cada página no dependa de archivos externos;
 // los .md se toman de la raíz. Está en .gitignore: no se publica, así no altera lo que leen los crawlers.
 function vistaLocal() {
   const LOCAL = 'vista-local';
-  const css = fs.readFileSync(path.join(RAIZ, 'assets/estilo.css'), 'utf8');
   const png = path.join(RAIZ, IMG_PRECIOS);
   const imgDatos = fs.existsSync(png) ? 'data:image/png;base64,' + fs.readFileSync(png).toString('base64') : null;
   for (const [rel, contenido] of [...salida]) {
     if (!rel.endsWith('.html')) continue;
     const origen = path.posix.dirname(path.posix.join(LOCAL, rel));
-    let local = contenido.replace('<link rel="stylesheet" href="/assets/estilo.css">', `<style>\n${css}</style>`);
+    let local = contenido;
     if (imgDatos) local = local.split(`src="${IMG_PRECIOS}"`).join(`src="${imgDatos}"`);
     local = local.replace(/(href|src)="(\/[^"]*)"/g, (_, attr, ruta) => {
       const destino = ruta === '/' ? `${LOCAL}/index.html`
