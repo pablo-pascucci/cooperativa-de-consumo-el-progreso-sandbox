@@ -18,6 +18,10 @@ Sitio de prueba, con contenido enteramente ficticio, para estudiar cómo leen e 
 
 Bloques admitidos en el contenido: `p`, `h2`, `lista`, `pasos`, `tabla`, `datos` y `especial` (`cobertura`, `tabla-sucursales`). El único marcado en línea es `[texto](/ruta)`.
 
+## Ver el sitio en local
+
+Abrir con doble clic `vista-local/index.html`. Es una copia con enlaces relativos que el build regenera en cada corrida. Está en `.gitignore`, así que no se publica: el sitio real usa URLs absolutas y sin extensión, que no funcionan desde `file://`.
+
 ## Comandos
 
 ```

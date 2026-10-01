@@ -407,7 +407,26 @@ function advertencias() {
   }
 }
 
+// Copia para abrir con doble clic (file://): enlaces relativos y con extensión .html.
+// Las páginas van a vista-local/; estilos, imágenes y .md se toman de la raíz.
+// Está en .gitignore: no se publica, así no altera lo que leen los crawlers.
+function vistaLocal() {
+  const LOCAL = 'vista-local';
+  for (const [rel, contenido] of [...salida]) {
+    if (!rel.endsWith('.html')) continue;
+    const origen = path.posix.dirname(path.posix.join(LOCAL, rel));
+    const local = contenido.replace(/(href|src)="(\/[^"]*)"/g, (_, attr, ruta) => {
+      const destino = ruta === '/' ? `${LOCAL}/index.html`
+        : path.posix.extname(ruta) ? ruta.slice(1)
+        : `${LOCAL}${ruta}.html`;
+      return `${attr}="${path.posix.relative(origen, destino)}"`;
+    });
+    emitir(path.posix.join(LOCAL, rel), local);
+  }
+}
+
 verificarNeutralidad();
 construir();
+vistaLocal();
 escribir();
 advertencias();
