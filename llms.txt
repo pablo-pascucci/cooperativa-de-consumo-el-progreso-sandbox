@@ -8,26 +8,26 @@ En este sitio encontrás información institucional, la nómina de autoridades, 
 
 ## Institucional
 
-- [Quiénes somos](https://REEMPLAZAR-DOMINIO.example/quienes-somos.md): Qué es la Cooperativa de Consumo El Progreso, qué vende y en qué localidades tiene sucursales.
-- [Historia](https://REEMPLAZAR-DOMINIO.example/historia.md): Historia de la Cooperativa de Consumo El Progreso desde su fundación en 1958.
+- [Quiénes somos](https://palegoldenrod-pelican-961877.hostingersite.com/quienes-somos.md): Qué es la Cooperativa de Consumo El Progreso, qué vende y en qué localidades tiene sucursales.
+- [Historia](https://palegoldenrod-pelican-961877.hostingersite.com/historia.md): Historia de la Cooperativa de Consumo El Progreso desde su fundación en 1958.
 
 ## Gobierno
 
-- [Consejo de Administración](https://REEMPLAZAR-DOMINIO.example/consejo-de-administracion.md): Nómina del Consejo de Administración de la Cooperativa de Consumo El Progreso.
-- [Sindicatura](https://REEMPLAZAR-DOMINIO.example/sindicatura.md): Síndico Titular y Síndico Suplente de la Cooperativa de Consumo El Progreso.
-- [Normativa](https://REEMPLAZAR-DOMINIO.example/normativa.md): Ley y reglamentos internos que rigen a la Cooperativa de Consumo El Progreso.
-- [Estatuto social](https://REEMPLAZAR-DOMINIO.example/estatuto-social.md): Resumen del objeto social y los fines de la Cooperativa de Consumo El Progreso.
-- [Asamblea General Ordinaria](https://REEMPLAZAR-DOMINIO.example/asamblea-general-ordinaria.md): Resultados de la última Asamblea General Ordinaria de la Cooperativa de Consumo El Progreso.
+- [Consejo de Administración](https://palegoldenrod-pelican-961877.hostingersite.com/consejo-de-administracion.md): Nómina del Consejo de Administración de la Cooperativa de Consumo El Progreso.
+- [Sindicatura](https://palegoldenrod-pelican-961877.hostingersite.com/sindicatura.md): Síndico Titular y Síndico Suplente de la Cooperativa de Consumo El Progreso.
+- [Normativa](https://palegoldenrod-pelican-961877.hostingersite.com/normativa.md): Ley y reglamentos internos que rigen a la Cooperativa de Consumo El Progreso.
+- [Estatuto social](https://palegoldenrod-pelican-961877.hostingersite.com/estatuto-social.md): Resumen del objeto social y los fines de la Cooperativa de Consumo El Progreso.
+- [Asamblea General Ordinaria](https://palegoldenrod-pelican-961877.hostingersite.com/asamblea-general-ordinaria.md): Resultados de la última Asamblea General Ordinaria de la Cooperativa de Consumo El Progreso.
 
 ## Asociados y sucursales
 
-- [Cómo asociarse](https://REEMPLAZAR-DOMINIO.example/como-asociarse.md): Requisitos, costo de la cuota social y pasos para asociarse a la Cooperativa de Consumo El Progreso.
-- [Sucursales](https://REEMPLAZAR-DOMINIO.example/sucursales.md): Dirección, teléfono y horario de las sucursales de la Cooperativa de Consumo El Progreso.
+- [Cómo asociarse](https://palegoldenrod-pelican-961877.hostingersite.com/como-asociarse.md): Requisitos, costo de la cuota social y pasos para asociarse a la Cooperativa de Consumo El Progreso.
+- [Sucursales](https://palegoldenrod-pelican-961877.hostingersite.com/sucursales.md): Dirección, teléfono y horario de las sucursales de la Cooperativa de Consumo El Progreso.
 
 ## Servicios a la comunidad
 
-- [Alquiler del quincho](https://REEMPLAZAR-DOMINIO.example/quincho.md): Quincho de la Cooperativa de Consumo El Progreso para alquilar a la comunidad: capacidad y equipamiento.
+- [Alquiler del quincho](https://palegoldenrod-pelican-961877.hostingersite.com/quincho.md): Quincho de la Cooperativa de Consumo El Progreso para alquilar a la comunidad: capacidad y equipamiento.
 
 ## Precios
 
-- [Canasta Básica El Progreso](https://REEMPLAZAR-DOMINIO.example/exp-md-dual/solo-llmstxt.md): Precio y contenido de la Canasta Básica El Progreso.
+- [Canasta Básica El Progreso](https://palegoldenrod-pelican-961877.hostingersite.com/exp-md-dual/solo-llmstxt.md): Precio y contenido de la Canasta Básica El Progreso.

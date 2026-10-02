@@ -53,6 +53,8 @@ node _fuente/servidor-local.js 8080
 
 ## Deploy en Hostinger
 
+Dominio actual: https://palegoldenrod-pelican-961877.hostingersite.com/. Si cambia, se actualiza `url_base` en `_fuente/sitio.json` y se regenera el sitio.
+
 hPanel → Avanzado → Git: conectar este repositorio, rama `main`, directorio `public_html` (vacío), y activar el auto-deploy por webhook. El `.htaccess` generado resuelve las URLs sin extensión, el `Content-Type: text/markdown; charset=utf-8` de los `.md`, la página 404 y el bloqueo de `_fuente/`, `.git` y este README.
 
 Todos los teléfonos usan la característica inventada `03999`. Antes de publicar, conviene confirmar que no esté asignada.
