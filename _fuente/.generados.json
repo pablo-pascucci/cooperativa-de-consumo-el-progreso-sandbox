@@ -30,6 +30,8 @@
   "normativa.md",
   "quienes-somos.html",
   "quienes-somos.md",
+  "quincho.html",
+  "quincho.md",
   "robots.txt",
   "sindicatura.html",
   "sindicatura.md",
@@ -54,6 +56,7 @@
   "vista-local/index.html",
   "vista-local/normativa.html",
   "vista-local/quienes-somos.html",
+  "vista-local/quincho.html",
   "vista-local/sindicatura.html",
   "vista-local/sucursales.html"
 ]

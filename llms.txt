@@ -4,7 +4,7 @@
 
 La Cooperativa de Consumo El Progreso es una cooperativa formada por sus asociados. Desde 1958 vende artículos de almacén y de primera necesidad en sucursales propias de Villa San Ernesto y localidades vecinas.
 
-En este sitio encontrás información institucional, la nómina de autoridades, la normativa que la rige, los resultados de la última asamblea, cómo asociarte y el listado de sucursales.
+En este sitio encontrás información institucional, la nómina de autoridades, la normativa que la rige, los resultados de la última asamblea, cómo asociarte, el listado de sucursales y el alquiler del quincho.
 
 ## Institucional
 
@@ -23,6 +23,10 @@ En este sitio encontrás información institucional, la nómina de autoridades, 
 
 - [Cómo asociarse](https://REEMPLAZAR-DOMINIO.example/como-asociarse.md): Requisitos, costo de la cuota social y pasos para asociarse a la Cooperativa de Consumo El Progreso.
 - [Sucursales](https://REEMPLAZAR-DOMINIO.example/sucursales.md): Dirección, teléfono y horario de las sucursales de la Cooperativa de Consumo El Progreso.
+
+## Servicios a la comunidad
+
+- [Alquiler del quincho](https://REEMPLAZAR-DOMINIO.example/quincho.md): Quincho de la Cooperativa de Consumo El Progreso para alquilar a la comunidad: capacidad y equipamiento.
 
 ## Precios
 
