@@ -20,9 +20,9 @@ Bloques admitidos en el contenido: `p`, `h2`, `lista`, `pasos`, `tabla`, `datos`
 
 ## Ver el sitio en local
 
-Abrir con doble clic `ABRIR-SITIO-LOCAL.html`, que redirige a `vista-local/index.html`. Es una copia con enlaces relativos y la imagen incrustada, que el build regenera en cada corrida. Las dos cosas están en `.gitignore`, así que no se publican.
+Abrir con doble clic `index.html`. Los enlaces internos son relativos y con extensión (`quincho.html`, `../index.html`), y el CSS (`_fuente/estilo.css`) va incrustado en cada página, así que el mismo archivo funciona en local y en Hostinger. La única excepción es `404.html`, que mantiene rutas absolutas porque el servidor la muestra desde cualquier profundidad de URL.
 
-El CSS (`_fuente/estilo.css`) va incrustado en todas las páginas, también en las publicadas, así que el diseño se ve aunque abras el `index.html` de la raíz. Pero desde ahí los enlaces de navegación no funcionan, porque son rutas del servidor (`/historia`). Para navegar en local, usá el acceso directo.
+En el servidor, `/quincho` y `/quincho.html` responden las dos con 200, sin redirección. La `canonical`, el sitemap y `llms.txt` usan la forma sin extensión, y `/quincho/` redirige a `/quincho`.
 
 ## Comandos
 

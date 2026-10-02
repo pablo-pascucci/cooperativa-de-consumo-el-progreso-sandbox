@@ -364,18 +364,17 @@ ${expMem.retirada ? `\n# exp-memoria-direccion: sucursal retirada.\nRedirect gon
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # /index.html -> /
-  RewriteCond %{THE_REQUEST} \\s/+index\\.html[\\s?] [NC]
-  RewriteRule ^ / [R=301,L]
+  # Los enlaces internos apuntan a pagina.html (relativos, para que funcionen también en local),
+  # así que /pagina.html se sirve directo, sin redirigir. La canonical de cada página es /pagina.
 
-  # /pagina.html -> /pagina
-  RewriteCond %{THE_REQUEST} \\s/+(.+?)\\.html[\\s?] [NC]
-  RewriteRule ^ /%1 [R=301,L]
+  # /pagina/ -> /pagina (con barra final, los enlaces relativos se resolverían mal)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
 
   # /pagina -> pagina.html
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^(.+?)/?$ $1.html [L]
+  RewriteRule ^(.+)$ $1.html [L]
 </IfModule>
 `;
 }
@@ -409,42 +408,23 @@ function advertencias() {
   }
 }
 
-// Copia para abrir con doble clic (file://): enlaces relativos y con extensión .html.
-// La imagen va incrustada para que cada página no dependa de archivos externos;
-// los .md se toman de la raíz. Está en .gitignore: no se publica, así no altera lo que leen los crawlers.
-function vistaLocal() {
-  const LOCAL = 'vista-local';
-  const png = path.join(RAIZ, IMG_PRECIOS);
-  const imgDatos = fs.existsSync(png) ? 'data:image/png;base64,' + fs.readFileSync(png).toString('base64') : null;
+// Enlaces internos relativos y con extensión .html (quincho.html, ../index.html): así cada página
+// funciona igual servida por Hostinger que abierta con doble clic (file://). Las plantillas escriben
+// rutas absolutas (/quincho) y acá se convierten; la canonical (URL completa) no se toca.
+// 404.html queda con rutas absolutas porque se sirve desde cualquier profundidad de URL.
+function enlacesRelativos() {
   for (const [rel, contenido] of [...salida]) {
-    if (!rel.endsWith('.html')) continue;
-    const origen = path.posix.dirname(path.posix.join(LOCAL, rel));
-    let local = contenido;
-    if (imgDatos) local = local.split(`src="${IMG_PRECIOS}"`).join(`src="${imgDatos}"`);
-    local = local.replace(/(href|src)="(\/[^"]*)"/g, (_, attr, ruta) => {
-      const destino = ruta === '/' ? `${LOCAL}/index.html`
-        : path.posix.extname(ruta) ? ruta.slice(1)
-        : `${LOCAL}${ruta}.html`;
+    if (!rel.endsWith('.html') || rel === '404.html') continue;
+    const origen = path.posix.dirname(rel);
+    emitir(rel, contenido.replace(/(href|src)="(\/[^"]*)"/g, (_, attr, ruta) => {
+      const destino = ruta === '/' ? 'index.html' : path.posix.extname(ruta) ? ruta.slice(1) : ruta.slice(1) + '.html';
       return `${attr}="${path.posix.relative(origen, destino)}"`;
-    });
-    emitir(path.posix.join(LOCAL, rel), local);
+    }));
   }
-  emitir('ABRIR-SITIO-LOCAL.html', `<!doctype html>
-<html lang="${sitio.idioma}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=${LOCAL}/index.html">
-  <title>${esc(sitio.nombre)} (vista local)</title>
-</head>
-<body>
-  <p><a href="${LOCAL}/index.html">Abrir el sitio en modo local</a></p>
-</body>
-</html>
-`);
 }
 
 verificarNeutralidad();
 construir();
-vistaLocal();
+enlacesRelativos();
 escribir();
 advertencias();

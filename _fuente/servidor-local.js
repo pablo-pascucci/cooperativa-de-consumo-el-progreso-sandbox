@@ -35,13 +35,13 @@ http.createServer((req, res) => {
     res.writeHead(410, { 'Content-Type': 'text/plain; charset=utf-8' });
     return res.end('410 Gone');
   }
-  if (ruta === '/index.html') { res.writeHead(301, { Location: '/' }); return res.end(); }
-  if (ruta.endsWith('.html')) { res.writeHead(301, { Location: ruta.slice(0, -5) }); return res.end(); }
-
   const directo = path.join(RAIZ, ruta === '/' ? 'index.html' : ruta);
   if (!directo.startsWith(RAIZ)) return no404();
+  if (ruta.length > 1 && ruta.endsWith('/') && !fs.existsSync(directo)) {
+    res.writeHead(301, { Location: ruta.slice(0, -1) }); return res.end();
+  }
   if (esArchivo(directo)) return enviar(res, 200, directo);
-  const conHtml = path.join(RAIZ, ruta.replace(/\/$/, '') + '.html');
+  const conHtml = path.join(RAIZ, ruta + '.html');
   if (esArchivo(conHtml)) return enviar(res, 200, conHtml);
   return no404();
 }).listen(PUERTO, () => console.log(`Vista previa en http://localhost:${PUERTO}/`));
