@@ -4,6 +4,7 @@
   "nav": "Quincho",
   "descripcion": "Quincho de la Cooperativa de Consumo El Progreso para alquilar a la comunidad: capacidad y equipamiento.",
   "llms_seccion": "Servicios a la comunidad",
+  "verificar_neutralidad": true,
   "bloques": [
     { "p": "La cooperativa alquila su quincho a asociados y a la comunidad en general para reuniones, celebraciones, charlas y otros encuentros." },
     { "datos": [
@@ -21,7 +22,14 @@
       "Equipo técnico de sonido."
     ] },
     { "p": "Si tu evento necesita luces o sonido, podés traer tu propio equipo o contratarlo por tu cuenta." },
-    { "h2": "Cómo reservarlo" },
-    { "p": "Consultá la disponibilidad de fechas y las condiciones de alquiler en la caja de atención de la [Casa Central](/sucursales)." }
+    { "h2": "Requisitos para reservar el quincho" },
+    { "pasos": [
+      "Completar el formulario de solicitud de uso, disponible en la sede administrativa y por correo electrónico, y presentarlo con al menos 30 días corridos de anticipación a la fecha del evento.",
+      "Adjuntar copia del DNI de la persona responsable del evento y un comprobante de domicilio.",
+      "Firmar el Reglamento de Uso del Quincho en la sede administrativa.",
+      "Recibir la comunicación de aprobación de la solicitud, que la administración emite dentro de los 5 días hábiles posteriores a la presentación.",
+      "Abonar una seña del 50 por ciento del valor del alquiler, por transferencia bancaria, dentro de las 72 horas posteriores a la aprobación, y abonar un depósito en garantía reembolsable, cuyo monto se informa al aprobarse la solicitud.",
+      "Recibir la confirmación escrita, que se emite dentro de los 5 días hábiles posteriores al pago de la seña. El depósito en garantía se reintegra dentro de los 10 días hábiles posteriores a la inspección del quincho realizada después del evento."
+    ] }
   ]
 }
