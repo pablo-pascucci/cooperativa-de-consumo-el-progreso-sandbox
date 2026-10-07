@@ -24,6 +24,10 @@ Abrir con doble clic `index.html`. Los enlaces internos son relativos y con exte
 
 En el servidor, `/quincho` y `/quincho.html` responden las dos con 200, sin redirección. La `canonical`, el sitemap y `llms.txt` usan la forma sin extensión, y `/quincho/` redirige a `/quincho`.
 
+## sitemap.xml
+
+Cada URL lleva `<loc>`, `<lastmod>`, `<changefreq>` y `<priority>`, que son los únicos campos del protocolo (no admite descripciones; esas van en el `<meta name="description">` de cada página y en `llms.txt`). `<lastmod>` refleja la última vez que cambió el contenido de la página: `_fuente/lastmod.json` guarda un hash por ruta, y la fecha solo se actualiza cuando el hash cambia. Ese archivo se versiona. `<changefreq>` (`monthly`) y `<priority>` (1.0 en la home y 0.8 en el resto) son iguales para experimentos e institucionales, para no sesgar el rastreo.
+
 ## Comandos
 
 ```

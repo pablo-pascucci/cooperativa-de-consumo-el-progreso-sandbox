@@ -319,15 +319,6 @@ function construir() {
     '',
   ].join('\n'));
 
-  // sitemap.xml — sólo HTML, nunca .md
-  emitir('sitemap.xml', [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...htmlRutas.map((r) => `  <url><loc>${esc(url(r))}</loc></url>`),
-    '</urlset>',
-    '',
-  ].join('\n'));
-
   emitir('.htaccess', htaccess());
 }
 
@@ -423,8 +414,55 @@ function enlacesRelativos() {
   }
 }
 
+// sitemap.xml — sólo HTML, nunca .md. Se arma al final, sobre el HTML definitivo.
+// <lastmod> es la fecha en que cambió por última vez el contenido de cada página: el registro
+// _fuente/lastmod.json guarda un hash por ruta, y la fecha se actualiza sólo cuando el hash cambia.
+// Sin registro previo, toma la fecha del último commit del archivo si el contenido no cambió.
+// <changefreq> y <priority> son iguales para experimentos e institucionales, para no sesgar el rastreo.
+const LASTMOD = path.join(FUENTE, 'lastmod.json');
+
+function fechaGit(rel, contenido) {
+  const { execFileSync } = require('child_process');
+  try {
+    const opciones = { cwd: RAIZ, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
+    if (execFileSync('git', ['show', `HEAD:${rel}`], opciones) !== contenido) return null;
+    return execFileSync('git', ['log', '-1', '--format=%cs', '--', rel], opciones).trim() || null;
+  } catch { return null; }
+}
+
+function sitemap() {
+  const crypto = require('crypto');
+  const previo = fs.existsSync(LASTMOD) ? JSON.parse(fs.readFileSync(LASTMOD, 'utf8')) : {};
+  const hoy = new Date().toLocaleDateString('sv-SE'); // AAAA-MM-DD en hora local
+  const registro = {};
+  for (const ruta of htmlRutas) {
+    const rel = archivoHtml(ruta);
+    const contenido = salida.get(rel);
+    const hash = crypto.createHash('sha256').update(contenido).digest('hex').slice(0, 16);
+    const anterior = previo[ruta];
+    registro[ruta] = anterior && anterior.hash === hash ? anterior : { hash, fecha: fechaGit(rel, contenido) || hoy };
+  }
+  fs.writeFileSync(LASTMOD, JSON.stringify(registro, null, 2) + '\n', 'utf8');
+
+  emitir('sitemap.xml', [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...htmlRutas.map((r) => [
+      '  <url>',
+      `    <loc>${esc(url(r))}</loc>`,
+      `    <lastmod>${registro[r].fecha}</lastmod>`,
+      '    <changefreq>monthly</changefreq>',
+      `    <priority>${r === '/' ? '1.0' : '0.8'}</priority>`,
+      '  </url>',
+    ].join('\n')),
+    '</urlset>',
+    '',
+  ].join('\n'));
+}
+
 verificarNeutralidad();
 construir();
 enlacesRelativos();
+sitemap();
 escribir();
 advertencias();

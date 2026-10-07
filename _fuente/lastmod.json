@@ -1,0 +1,82 @@
+{
+  "/": {
+    "hash": "bb2696a725d815f2",
+    "fecha": "2026-10-02"
+  },
+  "/quienes-somos": {
+    "hash": "39ef85f7143b5025",
+    "fecha": "2026-10-02"
+  },
+  "/historia": {
+    "hash": "43d72cae792d670d",
+    "fecha": "2026-10-02"
+  },
+  "/consejo-de-administracion": {
+    "hash": "f0b41041cc3bec54",
+    "fecha": "2026-10-02"
+  },
+  "/sindicatura": {
+    "hash": "b26b8b55d0361308",
+    "fecha": "2026-10-02"
+  },
+  "/normativa": {
+    "hash": "bff1d53df258b627",
+    "fecha": "2026-10-02"
+  },
+  "/estatuto-social": {
+    "hash": "4883cc731f2a4b9f",
+    "fecha": "2026-10-02"
+  },
+  "/asamblea-general-ordinaria": {
+    "hash": "abca60c8fbf30203",
+    "fecha": "2026-10-02"
+  },
+  "/como-asociarse": {
+    "hash": "d771c49b4f75e8b0",
+    "fecha": "2026-10-02"
+  },
+  "/sucursales": {
+    "hash": "3318037db6b2e312",
+    "fecha": "2026-10-02"
+  },
+  "/quincho": {
+    "hash": "4e6637a16b9d67a5",
+    "fecha": "2026-10-06"
+  },
+  "/exp-formato-precio/a": {
+    "hash": "662446a1a2bfdb44",
+    "fecha": "2026-10-02"
+  },
+  "/exp-formato-precio/b": {
+    "hash": "812e000193f90421",
+    "fecha": "2026-10-02"
+  },
+  "/exp-formato-precio/c": {
+    "hash": "a991cda74a415fd7",
+    "fecha": "2026-10-02"
+  },
+  "/exp-formato-precio/d": {
+    "hash": "ce4ae7360bca6960",
+    "fecha": "2026-10-02"
+  },
+  "/exp-formato-precio/e": {
+    "hash": "775b5a43fcb9ddd3",
+    "fecha": "2026-10-02"
+  },
+  "/exp-memoria-direccion": {
+    "hash": "acbc0323aee81d16",
+    "fecha": "2026-10-02"
+  },
+  "/exp-md-dual/solo-llmstxt": {
+    "hash": "628f4452f9d1d846",
+    "fecha": "2026-10-02"
+  },
+  "/exp-md-dual/solo-linkalternate": {
+    "hash": "1a16fea0801d63cc",
+    "fecha": "2026-10-02"
+  },
+  "/exp-md-dual/solo-linkvisible": {
+    "hash": "c8a96d402d7d141b",
+    "fecha": "2026-10-02"
+  }
+}
